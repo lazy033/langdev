@@ -116,7 +116,6 @@ tokenize :: proc(filepath: string) -> []Token {
 			append(&res, make_token(0, .LIT_STR, col, row, filepath, lit_str))
 			col += len(lit_str) + 1
 		case:
-			fmt.println(is_letter(code[cursor]), code[cursor])
 			if is_letter(code[cursor]) {
 				identifier := token_identifier(&cursor, code)
 				append(&res, make_token(0, .IDENTIFIER, col, row, filepath, identifier))
